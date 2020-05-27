@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
+
+Message.create(text: 'abc', timestamp: DateTime.now)
+Message.create(text: 'def', timestamp: DateTime.now)
+Message.create(text: 'ghi', timestamp: DateTime.now)
