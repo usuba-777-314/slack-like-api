@@ -11,4 +11,10 @@ class Api::MessagesController < ApplicationController
 
     @message = Message.create data
   end
+
+  def destroy
+    id = params.require(:id)
+    message = Message.find_by_id(id)
+    message.destroy
+  end
 end
