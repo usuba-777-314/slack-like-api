@@ -48,3 +48,23 @@ ChannelUser.insert_all([
   { channel_id: 2, user_id: 9, created_at: now, updated_at: now },
   { channel_id: 2, user_id: 10, created_at: now, updated_at: now }
 ])
+
+Message.insert_all([
+  { id: 1, user_id: 3, text: "Hello World.", timestamp: now + 1, created_at: now, updated_at: now },
+  { id: 2, user_id: 4, text: "Hello World.", timestamp: now + 2, created_at: now, updated_at: now },
+  { id: 3, user_id: 5, text: "Hello World.", timestamp: now + 3, created_at: now, updated_at: now },
+  { id: 4, user_id: 6, text: "Hello World.", timestamp: now + 4, created_at: now, updated_at: now },
+  { id: 5, user_id: 7, text: "Hello World.", timestamp: now + 5, created_at: now, updated_at: now },
+  { id: 6, user_id: 8, text: "Hello World.\nHello World.\nHello World.\nHello World.\nHello World.", timestamp: now + 6, created_at: now, updated_at: now },
+  { id: 7, user_id: 9, text: "Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World. Hello World.", timestamp: now + 7, created_at: now, updated_at: now }
+])
+
+ChannelMessage.insert_all([
+  { channel_id: 1, message_id: 1, created_at: now, updated_at: now },
+  { channel_id: 1, message_id: 2, created_at: now, updated_at: now },
+  { channel_id: 1, message_id: 3, created_at: now, updated_at: now },
+  { channel_id: 1, message_id: 4, created_at: now, updated_at: now },
+  { channel_id: 1, message_id: 5, created_at: now, updated_at: now },
+  { channel_id: 1, message_id: 6, created_at: now, updated_at: now },
+  { channel_id: 1, message_id: 7, created_at: now, updated_at: now }
+])

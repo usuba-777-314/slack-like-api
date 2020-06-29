@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_111647) do
+ActiveRecord::Schema.define(version: 2020_06_29_082431) do
+
+  create_table "channel_messages", force: :cascade do |t|
+    t.integer "channel_id"
+    t.integer "message_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel_id"], name: "index_channel_messages_on_channel_id"
+    t.index ["message_id"], name: "index_channel_messages_on_message_id"
+  end
 
   create_table "channel_users", force: :cascade do |t|
     t.integer "channel_id"
@@ -29,6 +38,15 @@ ActiveRecord::Schema.define(version: 2020_06_28_111647) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "text", null: false
+    t.datetime "timestamp", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "name", null: false
@@ -37,6 +55,9 @@ ActiveRecord::Schema.define(version: 2020_06_28_111647) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "channel_messages", "channels"
+  add_foreign_key "channel_messages", "messages"
   add_foreign_key "channel_users", "channels"
   add_foreign_key "channel_users", "users"
+  add_foreign_key "messages", "users"
 end
