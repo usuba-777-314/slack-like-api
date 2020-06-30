@@ -1,6 +1,3 @@
 json.set! :channel do
-  json.id @channel.id
-  json.name @channel.name
-  json.topic @channel.topic
-  json.users_count @channel.users_count
+  json.extract! @channel, :id, :name, :topic, :users_count
 end
