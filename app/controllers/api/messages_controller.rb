@@ -8,6 +8,12 @@ class Api::MessagesController < ApplicationController
     @message = send_to_channel(data)
   end
 
+  def destroy
+    id = params[:id]
+    message = Message.find(id)
+    message.destroy
+  end
+
   private
     def query
       Message.joins(:user).order(timestamp: "DESC")
